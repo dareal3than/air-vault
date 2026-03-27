@@ -78,10 +78,26 @@
     .review {
       border-bottom: 1px solid #ddd;
       padding: 10px 0;
+      position: relative;
     }
     .review:last-child { border-bottom: none; }
     .review p { margin: 5px 0; }
     .review strong { font-weight: 600; }
+
+    .delete-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #ff4d4d;
+      color: white;
+      border: none;
+      padding: 3px 8px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.8rem;
+      transition: background 0.3s;
+    }
+    .delete-btn:hover { background: #ff1a1a; }
 
     /* REVIEW FORM */
     .review-form {
@@ -153,18 +169,7 @@
     <h2>Customer Reviews</h2>
 
     <div id="review-list">
-      <div class="review">
-        <p><strong>Jaden P.</strong> ⭐⭐⭐⭐⭐</p>
-        <p>"The AirPods arrived super clean and tested, works perfectly! Highly recommend."</p>
-      </div>
-      <div class="review">
-        <p><strong>Maria L.</strong> ⭐⭐⭐⭐☆</p>
-        <p>"Great product and fast delivery, will buy again."</p>
-      </div>
-      <div class="review">
-        <p><strong>Tyler K.</strong> ⭐⭐⭐⭐⭐</p>
-        <p>"AirPods Pro look brand new! Excellent service."</p>
-      </div>
+      <!-- Reviews will appear here dynamically -->
     </div>
 
     <!-- REVIEW FORM -->
@@ -204,15 +209,22 @@
 
       const reviewDiv = document.createElement('div');
       reviewDiv.className = 'review';
-      reviewDiv.innerHTML = `<p><strong>${name}</strong> ${stars}</p><p>"${text}"</p>`;
+      reviewDiv.innerHTML = `
+        <p><strong>${name}</strong> ${stars}</p>
+        <p>"${text}"</p>
+        <button class="delete-btn" onclick="deleteReview(this)">Delete</button>
+      `;
 
-      // Add new review to top
       reviewList.prepend(reviewDiv);
 
-      // Clear form
       document.getElementById('reviewer-name').value = '';
       document.getElementById('review-stars').value = '';
       document.getElementById('review-text').value = '';
+    }
+
+    function deleteReview(button) {
+      const review = button.parentElement;
+      review.remove();
     }
   </script>
 
