@@ -137,6 +137,24 @@
   <footer>
     <p>Follow us on <a href="https://instagram.com/dareal3than_" target="_blank">Instagram @dareal3than_</a></p>
   </footer>
+<!-- Add this below the products section, before the footer -->
+<div class="reviews">
+  <h2>Customer Reviews</h2>
 
+  <div class="review">
+    <p><strong>Jaden P.</strong> ⭐⭐⭐⭐⭐</p>
+    <p>"The AirPods arrived super clean and tested, works perfectly! Highly recommend."</p>
+  </div>
+
+  <div class="review">
+    <p><strong>Maria L.</strong> ⭐⭐⭐⭐☆</p>
+    <p>"Great product and fast delivery, will buy again."</p>
+  </div>
+
+  <div class="review">
+    <p><strong>Tyler K.</strong> ⭐⭐⭐⭐⭐</p>
+    <p>"AirPods Pro look brand new! Excellent service."</p>
+  </div>
+</div>
 </body>
 </html>
