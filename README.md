@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<!DOCTYPE html><div class="sales-dashboard">
+  <h2>Sales Dashboard</h2>
+  <p>Total Revenue: $<span id="total-revenue">0</span></p>
+  <ul id="sales-list"></ul>
+</div>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
