@@ -9,7 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    /* General Styles */
     body {
       font-family: 'Montserrat', sans-serif;
       background: #f5f5f5 url('https://www.transparenttextures.com/patterns/diagonal-noise.png');
@@ -19,7 +18,6 @@
       color: #333;
     }
 
-    /* Header */
     header {
       background: linear-gradient(90deg, #1e1e1e, #000000);
       color: white;
@@ -36,7 +34,6 @@
       color: #ccc;
     }
 
-    /* Products Grid */
     .products {
       display: flex;
       flex-wrap: wrap;
@@ -44,7 +41,6 @@
       margin: 30px 20px;
     }
 
-    /* Product Card */
     .product {
       background: white;
       width: 300px;
@@ -74,7 +70,6 @@
       margin: 5px 0 15px 0;
     }
 
-    /* Buttons */
     .product button {
       background: black;
       color: white;
@@ -90,7 +85,6 @@
       transform: scale(1.05);
     }
 
-    /* Footer */
     footer {
       text-align: center;
       padding: 25px 0;
@@ -103,7 +97,6 @@
       text-decoration: none;
     }
 
-    /* Responsive */
     @media (max-width: 650px) {
       .products {
         flex-direction: column;
@@ -118,19 +111,17 @@
 </head>
 <body>
 
-  <!-- Header -->
   <header>
     <h1>AirVault</h1>
     <p>Tested & Cleaned AirPods | DM to Buy</p>
   </header>
 
-  <!-- Products -->
   <div class="products">
     <div class="product">
       <img src="https://via.placeholder.com/150" alt="AirPods Gen 2" loading="lazy">
       <h2>AirPods Gen 2</h2>
       <p>$65 – Cleaned & Tested</p>
-      <button onclick="window.location.href='https://instagram.com/Dareal3than_'" aria-label="DM AirVault on Instagram to buy AirPods Gen 2">
+      <button onclick="window.location.href='https://instagram.com/Dareal3than'" aria-label="DM Dareal3than on Instagram to buy AirPods Gen 2">
         DM to Buy
       </button>
     </div>
@@ -138,16 +129,16 @@
       <img src="https://via.placeholder.com/150" alt="AirPods Pro" loading="lazy">
       <h2>AirPods Pro</h2>
       <p>$95 – Refurbished & Tested</p>
-      <button onclick="window.location.href='https://instagram.com/Dareal3than_'" aria-label="DM AirVault on Instagram to buy AirPods Pro">
+      <button onclick="window.location.href='https://instagram.com/Dareal3than'" aria-label="DM Dareal3than on Instagram to buy AirPods Pro">
         DM to Buy
       </button>
     </div>
   </div>
 
-  <!-- Footer -->
   <footer>
-    <p>Follow us on <a href="https://instagram.com/Dareal3than_" target="_blank">Instagram @AirVault</a></p>
+    <p>Follow us on <a href="https://instagram.com/Dareal3than" target="_blank">Instagram @Dareal3than</a></p>
   </footer>
 
 </body>
 </html>
+ 
