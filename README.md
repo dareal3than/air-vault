@@ -106,7 +106,6 @@
         width: 90%;
       }
     }
-
   </style>
 </head>
 <body>
@@ -118,27 +117,26 @@
 
   <div class="products">
     <div class="product">
-      <img src="https://via.placeholder.com/150" alt="AirPods Gen 2" loading="lazy">
+      <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MV7N2?wid=200&hei=200&fmt=jpeg&qlt=95&.v=1591634795000" alt="AirPods Gen 2" loading="lazy">
       <h2>AirPods Gen 2</h2>
       <p>$65 – Cleaned & Tested</p>
-      <button onclick="window.location.href='https://instagram.com/Dareal3than'" aria-label="DM Dareal3than on Instagram to buy AirPods Gen 2">
+      <button onclick="window.location.href='https://instagram.com/dareal3than_'" aria-label="DM dareal3than_ on Instagram to buy AirPods Gen 2">
         DM to Buy
       </button>
     </div>
     <div class="product">
-      <img src="https://via.placeholder.com/150" alt="AirPods Pro" loading="lazy">
+      <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MWP22?wid=200&hei=200&fmt=jpeg&qlt=95&.v=1591634795000" alt="AirPods Pro" loading="lazy">
       <h2>AirPods Pro</h2>
       <p>$95 – Refurbished & Tested</p>
-      <button onclick="window.location.href='https://instagram.com/Dareal3than'" aria-label="DM Dareal3than on Instagram to buy AirPods Pro">
+      <button onclick="window.location.href='https://instagram.com/dareal3than_'" aria-label="DM dareal3than_ on Instagram to buy AirPods Pro">
         DM to Buy
       </button>
     </div>
   </div>
 
   <footer>
-    <p>Follow us on <a href="https://instagram.com/Dareal3than" target="_blank">Instagram @Dareal3than</a></p>
+    <p>Follow us on <a href="https://instagram.com/dareal3than_" target="_blank">Instagram @dareal3than_</a></p>
   </footer>
 
 </body>
 </html>
- 
