@@ -1,4 +1,10 @@
-<!-- ADMIN LOGIN (HIDDEN UNLESS ?admin=true) -->
+<h3>Delivery Options</h3>
+
+<select id="delivery-option">
+  <option value="0">Free Shipping (5–7 days) - $0</option>
+  <option value="5">Standard Shipping (3–5 days) - $5</option>
+  <option value="10">Express Shipping (1–2 days) - $10</option>
+</select><!-- ADMIN LOGIN (HIDDEN UNLESS ?admin=true) -->
 <div id="admin-login" style="display:none;">
   <h2>Admin Login</h2>
   <input type="password" id="admin-password" placeholder="Enter password">
