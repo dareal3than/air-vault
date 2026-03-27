@@ -1,4 +1,20 @@
+<!-- ADMIN LOGIN (HIDDEN UNLESS ?admin=true) -->
+<div id="admin-login" style="display:none;">
+  <h2>Admin Login</h2>
+  <input type="password" id="admin-password" placeholder="Enter password">
+  <button onclick="loginAdmin()">Login</button>
+</div>
+
+<!-- ADMIN DASHBOARD -->
 <div id="admin-dashboard" style="display:none;">
+  <h2>Sales Dashboard</h2>
+  <p>Total Revenue: $<span id="total-revenue">0</span></p>
+  <ul id="sales-list"></ul>
+  <button onclick="logoutAdmin()">Logout</button>
+</div>
+
+<!-- CHECKOUT BUTTON -->
+<button onclick="checkout()">Checkout</button><div id="admin-dashboard" style="display:none;">
   <!-- your dashboard -->
 </div><!DOCTYPE html><div class="sales-dashboard">
   <h2>Sales Dashboard</h2>
