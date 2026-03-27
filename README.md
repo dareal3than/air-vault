@@ -1,4 +1,6 @@
-<!DOCTYPE html><div class="sales-dashboard">
+<div id="admin-dashboard" style="display:none;">
+  <!-- your dashboard -->
+</div><!DOCTYPE html><div class="sales-dashboard">
   <h2>Sales Dashboard</h2>
   <p>Total Revenue: $<span id="total-revenue">0</span></p>
   <ul id="sales-list"></ul>
