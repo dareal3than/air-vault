@@ -3,29 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AirVault - Tested AirPods & More</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-
+<title>Dareal3than Store - AirPods & Clothing</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Lora&display=swap" rel="stylesheet">
 <style>
+/* ===== GENERAL STYLES ===== */
 body {
   font-family: 'Montserrat', sans-serif;
-  background: #f5f5f5 url('https://www.transparenttextures.com/patterns/diagonal-noise.png');
-  background-size: cover;
+  background: #f0f2f5;
   margin: 0;
   padding: 0;
   color: #333;
 }
 a { color: #1e90ff; text-decoration: none; }
 
-header {
-  background: linear-gradient(90deg, #1e1e1e, #000000);
-  color: white;
-  padding: 25px 0;
+/* ===== HERO BANNER ===== */
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1606813909455-3d09fdb1d7b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDF8fGFpcnBvZHN8ZW58MHx8fHwxNjg5Mjc3NjY4&ixlib=rb-4.0.3&q=80&w=1080') no-repeat center center;
+  background-size: cover;
   text-align: center;
+  padding: 80px 20px;
+  color: white;
 }
-header h1 { margin: 0; font-size: 2.5rem; }
-header p { margin: 5px 0 0 0; font-size: 1.1rem; color: #ccc; }
+.hero h1 { font-size: 3rem; margin-bottom: 10px; }
+.hero p { font-size: 1.2rem; }
 
+/* ===== HEADER ===== */
+header {
+  background: #111;
+  color: white;
+  padding: 15px 0;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+header h1 { margin: 0; font-size: 2rem; }
+header p { margin: 5px 0 0 0; color: #ccc; font-size: 1rem; }
+
+/* ===== PRODUCTS GRID ===== */
 .products {
   display: flex;
   flex-wrap: wrap;
@@ -34,10 +47,10 @@ header p { margin: 5px 0 0 0; font-size: 1.1rem; color: #ccc; }
 }
 .product {
   background: white;
-  width: 300px;
+  width: 280px;
   margin: 15px;
   border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   padding: 20px;
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
@@ -45,7 +58,7 @@ header p { margin: 5px 0 0 0; font-size: 1.1rem; color: #ccc; }
 }
 .product:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 .product img {
   width: 150px;
@@ -62,7 +75,71 @@ header p { margin: 5px 0 0 0; font-size: 1.1rem; color: #ccc; }
 }
 .product button:hover { background: #1e1e1e; transform: scale(1.05); }
 
-/* CART */
+/* ===== MODAL ===== */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1000; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto;
+  background-color: rgba(0,0,0,0.7);
+}
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto; 
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 550px;
+  text-align: center;
+  position: relative;
+}
+.close-modal {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+}
+.close-modal:hover { color: black; }
+
+/* ===== CAROUSEL ===== */
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+.carousel-container img {
+  width: 80px;
+  margin: 0 5px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: border 0.3s;
+}
+.carousel-container img.selected { border-color: #1e90ff; }
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background: rgba(255,255,255,0.8);
+  border-radius: 50%;
+  width: 35px; height: 35px;
+  line-height: 35px;
+  text-align: center;
+  cursor: pointer;
+}
+.carousel-arrow:hover { background: rgba(255,255,255,1); }
+.carousel-left { left: -45px; }
+.carousel-right { right: -45px; }
+
+/* ===== CART ===== */
 .cart {
   max-width: 800px;
   margin: 20px auto;
@@ -70,6 +147,7 @@ header p { margin: 5px 0 0 0; font-size: 1.1rem; color: #ccc; }
   border-radius: 12px;
   padding: 15px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  position: relative;
 }
 .cart h2 { text-align: center; margin-bottom: 10px; }
 .cart-items { list-style: none; padding: 0; margin: 0; }
@@ -91,7 +169,17 @@ header p { margin: 5px 0 0 0; font-size: 1.1rem; color: #ccc; }
 }
 .clear-cart:hover { background: darkred; }
 
-/* REVIEWS */
+/* ===== DELIVERY OPTIONS ===== */
+.delivery-options {
+  margin: 10px 0;
+}
+.delivery-options select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* ===== REVIEWS ===== */
 .reviews {
   max-width: 800px;
   margin: 40px auto;
@@ -141,80 +229,28 @@ header p { margin: 5px 0 0 0; font-size: 1.1rem; color: #ccc; }
 }
 .review-form button:hover { background: #1e1e1e; }
 
-/* MODAL */
-.modal {
-  display: none; 
-  position: fixed; 
-  z-index: 1000; 
-  left: 0;
-  top: 0;
-  width: 100%; 
-  height: 100%; 
-  overflow: auto;
-  background-color: rgba(0,0,0,0.6);
-}
-.modal-content {
-  background-color: #fff;
-  margin: 5% auto; 
-  padding: 20px;
-  border-radius: 15px;
-  max-width: 550px;
+/* ===== FOOTER ===== */
+footer {
   text-align: center;
-  position: relative;
+  padding: 20px 0;
+  background: #222;
+  color: #ccc;
+  margin-top: 30px;
 }
-.modal-content img { width: 250px; margin-bottom: 15px; border-radius: 15px; }
-.close-modal {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 1.5rem;
-  font-weight: bold;
-  cursor: pointer;
-  color: #333;
-}
-.close-modal:hover { color: black; }
-
-/* Carousel with arrows */
-.carousel-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 15px;
-}
-.carousel-container img {
-  width: 80px;
-  margin: 0 5px;
-  border-radius: 10px;
-  border: 2px solid transparent;
-  cursor: pointer;
-  transition: border 0.3s;
-}
-.carousel-container img.selected { border-color: #1e90ff; }
-.carousel-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2rem;
-  background: rgba(255,255,255,0.8);
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  line-height: 35px;
-  text-align: center;
-  cursor: pointer;
-  user-select: none;
-}
-.carousel-arrow:hover { background: rgba(255,255,255,1); }
-.carousel-left { left: -45px; }
-.carousel-right { right: -45px; }
 </style>
 </head>
 <body>
 
+<!-- HERO BANNER -->
+<div class="hero">
+  <h1>Dareal3than Store</h1>
+  <p>Tested AirPods & Trendy Clothing – DM to Buy!</p>
+</div>
+
+<!-- HEADER -->
 <header>
-  <h1>AirVault</h1>
-  <p>Tested & Cleaned AirPods | DM to Buy</p>
+  <h1>Dareal3than Store</h1>
+  <p>Shop AirPods & Clothing | Fast Delivery</p>
 </header>
 
 <!-- PRODUCTS -->
@@ -245,16 +281,22 @@ header p { margin: 5px 0 0 0; font-size: 1.1rem; color: #ccc; }
   <div class="modal-content">
     <span class="close-modal" onclick="closeModal()">&times;</span>
     <h2 id="modal-name"></h2>
-    
     <div class="carousel-container">
       <span class="carousel-arrow carousel-left" onclick="prevImage()">&#10094;</span>
       <img id="modal-main-img" src="" alt="">
       <span class="carousel-arrow carousel-right" onclick="nextImage()">&#10095;</span>
     </div>
-    
     <div class="carousel-thumbnails" id="modal-carousel"></div>
     <p id="modal-description"></p>
     <p><strong>Price: $<span id="modal-price"></span></strong></p>
+    <div class="delivery-options">
+      <label for="delivery">Choose Delivery Option:</label>
+      <select id="delivery">
+        <option value="Pickup">Pickup</option>
+        <option value="Standard">Standard Delivery</option>
+        <option value="Express">Express Delivery</option>
+      </select>
+    </div>
     <button onclick="addToCartFromModal()">Add to Cart</button>
   </div>
 </div>
@@ -292,6 +334,7 @@ header p { margin: 5px 0 0 0; font-size: 1.1rem; color: #ccc; }
 </footer>
 
 <script>
+/* ===== CART LOGIC ===== */
 let cart = [];
 let modalProduct = {};
 let modalImages = [];
@@ -330,29 +373,15 @@ function updateMainImage() {
   });
 }
 
-function nextImage() {
-  currentImageIndex = (currentImageIndex + 1) % modalImages.length;
-  updateMainImage();
-}
-
-function prevImage() {
-  currentImageIndex = (currentImageIndex - 1 + modalImages.length) % modalImages.length;
-  updateMainImage();
-}
-
-function closeModal() {
-  document.getElementById('product-modal').style.display = 'none';
-}
+function nextImage() { currentImageIndex = (currentImageIndex + 1) % modalImages.length; updateMainImage(); }
+function prevImage() { currentImageIndex = (currentImageIndex - 1 + modalImages.length) % modalImages.length; updateMainImage(); }
+function closeModal() { document.getElementById('product-modal').style.display = 'none'; }
 
 function addToCartFromModal() {
-  cart.push(modalProduct);
+  const delivery = document.getElementById('delivery').value;
+  cart.push({...modalProduct, delivery});
   updateCart();
   closeModal();
-}
-
-function addToCart(name, price, description) {
-  cart.push({name, price, description});
-  updateCart();
 }
 
 function updateCart() {
@@ -362,23 +391,16 @@ function updateCart() {
   cart.forEach((item, index) => {
     total += item.price;
     const li = document.createElement('li');
-    li.innerHTML = `<strong>${item.name}</strong> - $${item.price}<br>${item.description} <button onclick="removeItem(${index})">Remove</button>`;
+    li.innerHTML = `<strong>${item.name}</strong> - $${item.price}<br>${item.description}<br>Delivery: ${item.delivery} <button onclick="removeItem(${index})">Remove</button>`;
     cartItems.appendChild(li);
   });
   document.getElementById('cart-total').textContent = total;
 }
 
-function removeItem(index) {
-  cart.splice(index, 1);
-  updateCart();
-}
+function removeItem(index) { cart.splice(index, 1); updateCart(); }
+function clearCart() { cart = []; updateCart(); }
 
-function clearCart() {
-  cart = [];
-  updateCart();
-}
-
-// Reviews
+/* ===== REVIEWS ===== */
 function addReview() {
   const name = document.getElementById('reviewer-name').value.trim();
   const stars = document.getElementById('review-stars').value;
@@ -392,20 +414,4 @@ function addReview() {
   reviewList.prepend(reviewDiv);
 
   document.getElementById('reviewer-name').value = '';
-  document.getElementById('review-stars').value = '';
-  document.getElementById('review-text').value = '';
-}
-
-function deleteReview(button) {
-  button.parentElement.remove();
-}
-
-// Close modal if clicked outside
-window.onclick = function(event) {
-  const modal = document.getElementById('product-modal');
-  if (event.target == modal) { closeModal(); }
-}
-</script>
-
-</body>
-</html>
+  document.getElementById('review-stars').value =
