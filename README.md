@@ -236,3 +236,49 @@ function updateCart() {
 
 </body>
 </html>
+<button onclick="openCheckout()">Checkout</button>
+<div class="modal" id="checkout-modal">
+  <div class="modal-content">
+    <h2>Checkout</h2>
+
+    <input id="name" placeholder="Full Name"><br><br>
+    <input id="address" placeholder="Address"><br><br>
+    <input id="city" placeholder="City"><br><br>
+    <input id="zip" placeholder="ZIP Code"><br><br>
+
+    <button onclick="placeOrder()">Place Order</button><br><br>
+    <button onclick="closeCheckout()">Cancel</button>
+  </div>
+</div>
+function openCheckout() {
+  if (cart.length === 0) {
+    alert("Your cart is empty");
+    return;
+  }
+  document.getElementById("checkout-modal").style.display = "block";
+}
+
+function closeCheckout() {
+  document.getElementById("checkout-modal").style.display = "none";
+}
+
+function placeOrder() {
+  const name = document.getElementById("name").value;
+  const address = document.getElementById("address").value;
+  const city = document.getElementById("city").value;
+  const zip = document.getElementById("zip").value;
+
+  if (!name || !address || !city || !zip) {
+    alert("Fill all fields");
+    return;
+  }
+
+  let total = 0;
+  cart.forEach(item => total += item.price);
+
+  alert("Order placed! Total: $" + total);
+
+  cart = [];
+  updateCart();
+  closeCheckout();
+}
