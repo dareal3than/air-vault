@@ -2,68 +2,93 @@
 <html>
 <head>
   <title>AirVault</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Montserrat', sans-serif;
       margin: 0;
+      font-family: 'Inter', sans-serif;
       background: #f5f5f7;
       color: #1d1d1f;
     }
 
+    /* NAVBAR */
     header {
-      background: white;
-      padding: 20px;
-      text-align: center;
-      font-size: 1.8rem;
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,0.7);
+      padding: 15px 30px;
       font-weight: 600;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      font-size: 1.5rem;
+      border-bottom: 1px solid #ddd;
     }
 
+    /* PRODUCTS */
     .products {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-      padding: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      padding: 60px;
     }
 
     .product {
       background: white;
-      border-radius: 18px;
-      padding: 20px;
+      border-radius: 24px;
+      padding: 25px;
       text-align: center;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
       transition: 0.3s;
     }
 
     .product:hover {
-      transform: translateY(-5px);
+      transform: translateY(-8px) scale(1.02);
     }
 
     .product img {
-      width: 150px;
-      margin-bottom: 15px;
+      width: 180px;
+      margin-bottom: 20px;
+    }
+
+    .price {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 10px 0;
     }
 
     button {
       background: black;
       color: white;
       border: none;
-      padding: 10px 20px;
-      border-radius: 20px;
+      padding: 12px 22px;
+      border-radius: 30px;
       cursor: pointer;
+      font-size: 0.95rem;
+      transition: 0.2s;
     }
 
+    button:hover {
+      opacity: 0.85;
+    }
+
+    /* CART */
     .cart {
       position: fixed;
       right: 20px;
       bottom: 20px;
       background: white;
-      padding: 15px;
-      border-radius: 12px;
-      width: 250px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      padding: 20px;
+      border-radius: 20px;
+      width: 260px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+
+    .cart h3 {
+      margin-top: 0;
     }
 
     /* MODAL */
@@ -73,26 +98,33 @@
       top:0; left:0;
       width:100%; height:100%;
       background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(5px);
     }
 
     .modal-content {
       background: white;
       margin: 5% auto;
-      padding: 25px;
-      border-radius: 20px;
-      width: 320px;
+      padding: 30px;
+      border-radius: 25px;
+      width: 350px;
       text-align: center;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px);}
+      to { opacity: 1; transform: translateY(0);}
     }
 
     .carousel img {
-      width: 180px;
-      margin: 10px;
+      width: 200px;
+      margin: 10px 0;
     }
 
     .arrow {
       cursor: pointer;
-      font-size: 22px;
-      padding: 10px;
+      font-size: 24px;
+      margin: 10px;
     }
   </style>
 </head>
@@ -104,19 +136,19 @@
 <div class="products">
 
   <div class="product">
-    <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MV7N2?wid=400&hei=400&fmt=jpeg">
+    <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MV7N2?wid=400">
     <h2>AirPods Gen 2</h2>
-    <p>Cleaned, tested, and ready to use. Reliable battery and smooth Bluetooth connection.</p>
-    <p><strong>$65</strong></p>
-    <button onclick="openModal('AirPods Gen 2',65,'Cleaned & Tested AirPods with great sound quality',['https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MV7N2?wid=400','https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MV7N2_AV2?wid=400'])">View</button>
+    <p>Reliable, clean sound with seamless Apple connection.</p>
+    <div class="price">$65</div>
+    <button onclick="openModal('AirPods Gen 2',65,'Cleaned & Tested',['https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MV7N2?wid=400','https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MV7N2_AV2?wid=400'])">View</button>
   </div>
 
   <div class="product">
-    <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MWP22?wid=400&hei=400&fmt=jpeg">
+    <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MWP22?wid=400">
     <h2>AirPods Pro</h2>
-    <p>Refurbished premium AirPods with noise cancellation and immersive sound.</p>
-    <p><strong>$95</strong></p>
-    <button onclick="openModal('AirPods Pro',95,'Refurbished AirPods Pro with ANC',['https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MWP22?wid=400','https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MWP22_AV2?wid=400'])">View</button>
+    <p>Noise cancellation with premium immersive audio.</p>
+    <div class="price">$95</div>
+    <button onclick="openModal('AirPods Pro',95,'Refurbished Pro with ANC',['https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MWP22?wid=400','https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MWP22_AV2?wid=400'])">View</button>
   </div>
 
 </div>
@@ -139,7 +171,7 @@
 
     <h2 id="name"></h2>
     <p id="desc"></p>
-    <p>$<span id="price"></span></p>
+    <div class="price">$<span id="price"></span></div>
 
     <button onclick="addToCart()">Add to Cart</button><br><br>
     <button onclick="closeModal()">Close</button>
