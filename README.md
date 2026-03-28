@@ -1,1 +1,206 @@
- <title>AirVault - Tested AirPods & More</title> <style> body { font-family: 'Montserrat', sans-serif; background: #f5f5f5 url('https://www.transparenttextures.com/patterns/diagonal-noise.png'); background-size: cover; margin: 0; padding: 0; color: #333; } a { color: #1e90ff; text-decoration: none; } header { background: linear-gradient(90deg, #1e1e1e, #000000); color: white; padding: 25px 0; text-align: center; } header h1 { margin: 0; font-size: 2.5rem; } header p { margin: 5px 0 0 0; font-size: 1.1rem; color: #ccc; } .products { display: flex; flex-wrap: wrap; justify-content: center; margin: 30px 20px; } .product { background: white; width: 300px; margin: 15px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; } .product:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(0,0,0,0.2); } .product img { width: 150px; margin-bottom: 15px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); } .product h2 { margin: 10px 0; font-size: 1.3rem; } .product p { font-size: 1rem; margin: 5px 0 15px 0; } .product button { background: black; color: white; border: none; padding: 10px 25px; border-radius: 5px; cursor: pointer; font-size: 1rem; transition: background 0.3s, transform 0.2s; } .product button:hover { background: #1e1e1e; transform: scale(1.05); } /* CART */ .cart { max-width: 800px; margin: 20px auto; background: #fff; border-radius: 12px; padding: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); } .cart h2 { text-align: center; margin-bottom: 10px; } .cart-items { list-style: none; padding: 0; margin: 0; } .cart-items li { padding: 10px 0; border-bottom: 1px solid #ddd; display: flex; justify-content: space-between; flex-direction: column; } .cart-items li:last-child { border-bottom: none; } .cart-items button { background: #ff4d4d; color: white; border: none; padding: 5px 10px; border-radius: 5px; margin-top: 5px; cursor: pointer; } .cart-items button:hover { background: #ff1a1a; } .clear-cart { margin-top: 10px; background: red; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; } .clear-cart:hover { background: darkred; } /* REVIEWS */ .reviews { max-width: 800px; margin: 40px auto; padding: 20px; background: #fff; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); } .reviews h2 { text-align: center; font-size: 2rem; margin-bottom: 20px; } .review { border-bottom: 1px solid #ddd; padding: 10px 0; position: relative; } .review:last-child { border-bottom: none; } .review p { margin: 5px 0; } .review strong { font-weight: 600; } .delete-btn { position: absolute; top: 10px; right: 10px; background: #ff4d4d; color: white; border: none; padding: 3px 8px; border-radius: 5px; cursor: pointer; font-size: 0.8rem; } .delete-btn:hover { background: #ff1a1a; } /* Review Form */ .review-form { margin-top: 20px; text-align: center; } .review-form input, .review-form textarea, .review-form select { width: 80%; max-width: 400px; padding: 8px; margin: 5px 0; border-radius: 5px; border: 1px solid #ccc; font-size: 1rem; } .review-form button { margin-top: 10px; padding: 10px 20px; font-size: 1rem; border: none; border-radius: 5px; background: black; color: white; cursor: pointer; } .review-form button:hover { background: #1e1e1e; } /* MODAL */ .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.6); } .modal-content { background-color: #fff; margin: 5% auto; padding: 20px; border-radius: 15px; max-width: 550px; text-align: center; position: relative; } .modal-content img { width: 250px; margin-bottom: 15px; border-radius: 15px; } .close-modal { position: absolute; top: 10px; right: 15px; font-size: 1.5rem; font-weight: bold; cursor: pointer; color: #333; } .close-modal:hover { color: black; } /* Carousel with arrows */ .carousel-container { position: relative; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; } .carousel-container img { width: 80px; margin: 0 5px; border-radius: 10px; border: 2px solid transparent; cursor: pointer; transition: border 0.3s; } .carousel-container img.selected { border-color: #1e90ff; } .carousel-arrow { position: absolute; top: 50%; transform: translateY(-50%); font-size: 2rem; background: rgba(255,255,255,0.8); border-radius: 50%; width: 35px; height: 35px; line-height: 35px; text-align: center; cursor: pointer; user-select: none; } .carousel-arrow:hover { background: rgba(255,255,255,1); } .carousel-left { left: -45px; } .carousel-right { right: -45px; } </style> AirVault Tested & Cleaned AirPods | DM to Buy AirPods Gen 2 AirPods Gen 2 $65 – Cleaned & Tested DM to Buy AirPods Pro AirPods Pro $95 – Refurbished & Tested DM to Buy × <div class="carousel-container"> <span class="carousel-arrow carousel-left" onclick="prevImage()">&#10094;</span> <img id="modal-main-img" src="" alt=""> <span class="carousel-arrow carousel-right" onclick="nextImage()">&#10095;</span> </div> <div class="carousel-thumbnails" id="modal-carousel"></div> <p id="modal-description"></p> <p><strong>Price: $<span id="modal-price"></span></strong></p> <button onclick="addToCartFromModal()">Add to Cart</button> Shopping Cart Total: $0 Clear Cart Customer Reviews Submit Your Review Select Rating ⭐ ⭐⭐ ⭐⭐⭐ ⭐⭐⭐⭐ ⭐⭐⭐⭐⭐ <textarea id="review-text" placeholder="Your review..." rows="3" required></textarea> Submit Review Follow us on Instagram @dareal3than_ <script> let cart = []; let modalProduct = {}; let modalImages = []; let currentImageIndex = 0; function openModal(name, price, description, images) { modalProduct = {name, price, description}; modalImages = images; currentImageIndex = 0; document.getElementById('modal-name').textContent = name; document.getElementById('modal-price').textContent = price; document.getElementById('modal-description').textContent = description; document.getElementById('modal-main-img').src = modalImages[0]; buildThumbnails(); document.getElementById('product-modal').style.display = 'block'; } function buildThumbnails() { const carousel = document.getElementById('modal-carousel'); carousel.innerHTML = ''; modalImages.forEach((img, index) => { const thumb = document.createElement('img'); thumb.src = img; thumb.className = index === 0 ? 'selected' : ''; thumb.onclick = () => { currentImageIndex = index; updateMainImage(); }; carousel.appendChild(thumb); }); } function updateMainImage() { document.getElementById('modal-main-img').src = modalImages[currentImageIndex]; document.querySelectorAll('#modal-carousel img').forEach((img, i) => { img.classList.toggle('selected', i === currentImageIndex); }); } function nextImage() { currentImageIndex = (currentImageIndex + 1) % modalImages.length; updateMainImage(); } function prevImage() { currentImageIndex = (currentImageIndex - 1 + modalImages.length) % modalImages.length; updateMainImage(); } function closeModal() { document.getElementById('product-modal').style.display = 'none'; } function addToCartFromModal() { cart.push(modalProduct); updateCart(); closeModal(); } function addToCart(name, price, description) { cart.push({name, price, description}); updateCart(); } function updateCart() { const cartItems = document.getElementById('cart-items'); cartItems.innerHTML = ''; let total = 0; cart.forEach((item, index) => { total += item.price; const li = document.createElement('li'); li.innerHTML = ${item.name} - $${item.price} ${item.description} Remove; cartItems.appendChild(li); }); document.getElementById('cart-total').textContent = total; } function removeItem(index) { cart.splice(index, 1); updateCart(); } function clearCart() { cart = []; updateCart(); } // Reviews function addReview() { const name = document.getElementById('reviewer-name').value.trim(); const stars = document.getElementById('review-stars').value; const text = document.getElementById('review-text').value.trim(); if (!name || !stars || !text) { alert('Please fill in all fields.'); return; } const reviewList = document.getElementById('review-list'); const reviewDiv = document.createElement('div'); reviewDiv.className = 'review'; reviewDiv.innerHTML = ${name} ${stars} "${text}" Delete; reviewList.prepend(reviewDiv); document.getElementById('reviewer-name').value = ''; document.getElementById('review-stars').value = ''; document.getElementById('review-text').value = ''; } function deleteReview(button) { button.parentElement.remove(); } // Close modal if clicked outside window.onclick = function(event) { const modal = document.getElementById('product-modal'); if (event.target == modal) { closeModal(); } } </script>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AirVault</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      background: #f5f5f7;
+      color: #1d1d1f;
+    }
+
+    header {
+      background: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: 600;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      padding: 40px;
+    }
+
+    .product {
+      background: white;
+      border-radius: 18px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+    }
+
+    .product img {
+      width: 150px;
+      margin-bottom: 15px;
+    }
+
+    button {
+      background: black;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .cart {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: white;
+      padding: 15px;
+      border-radius: 12px;
+      width: 250px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    /* MODAL */
+    .modal {
+      display: none;
+      position: fixed;
+      top:0; left:0;
+      width:100%; height:100%;
+      background: rgba(0,0,0,0.6);
+    }
+
+    .modal-content {
+      background: white;
+      margin: 5% auto;
+      padding: 25px;
+      border-radius: 20px;
+      width: 320px;
+      text-align: center;
+    }
+
+    .carousel img {
+      width: 180px;
+      margin: 10px;
+    }
+
+    .arrow {
+      cursor: pointer;
+      font-size: 22px;
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>AirVault</header>
+
+<div class="products">
+
+  <div class="product">
+    <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MV7N2?wid=400&hei=400&fmt=jpeg">
+    <h2>AirPods Gen 2</h2>
+    <p>Cleaned, tested, and ready to use. Reliable battery and smooth Bluetooth connection.</p>
+    <p><strong>$65</strong></p>
+    <button onclick="openModal('AirPods Gen 2',65,'Cleaned & Tested AirPods with great sound quality',['https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MV7N2?wid=400','https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MV7N2_AV2?wid=400'])">View</button>
+  </div>
+
+  <div class="product">
+    <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MWP22?wid=400&hei=400&fmt=jpeg">
+    <h2>AirPods Pro</h2>
+    <p>Refurbished premium AirPods with noise cancellation and immersive sound.</p>
+    <p><strong>$95</strong></p>
+    <button onclick="openModal('AirPods Pro',95,'Refurbished AirPods Pro with ANC',['https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MWP22?wid=400','https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MWP22_AV2?wid=400'])">View</button>
+  </div>
+
+</div>
+
+<!-- CART -->
+<div class="cart">
+  <h3>Cart</h3>
+  <ul id="cart-items"></ul>
+  <p>Total: $<span id="total">0</span></p>
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <div>
+      <span class="arrow" onclick="prev()">⬅</span>
+      <img id="modal-img">
+      <span class="arrow" onclick="next()">➡</span>
+    </div>
+
+    <h2 id="name"></h2>
+    <p id="desc"></p>
+    <p>$<span id="price"></span></p>
+
+    <button onclick="addToCart()">Add to Cart</button><br><br>
+    <button onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+<script>
+let cart = [];
+let current = {};
+let imgs = [];
+let i = 0;
+
+function openModal(name, price, desc, images) {
+  current = {name, price};
+  imgs = images;
+  i = 0;
+
+  document.getElementById("name").innerText = name;
+  document.getElementById("desc").innerText = desc;
+  document.getElementById("price").innerText = price;
+  document.getElementById("modal-img").src = imgs[0];
+
+  document.getElementById("modal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
+
+function next() {
+  i = (i+1)%imgs.length;
+  document.getElementById("modal-img").src = imgs[i];
+}
+
+function prev() {
+  i = (i-1+imgs.length)%imgs.length;
+  document.getElementById("modal-img").src = imgs[i];
+}
+
+function addToCart() {
+  cart.push(current);
+  updateCart();
+  closeModal();
+}
+
+function updateCart() {
+  let list = document.getElementById("cart-items");
+  let total = 0;
+
+  list.innerHTML = "";
+
+  cart.forEach(item=>{
+    total += item.price;
+    let li = document.createElement("li");
+    li.textContent = item.name + " - $" + item.price;
+    list.appendChild(li);
+  });
+
+  document.getElementById("total").innerText = total;
+}
+</script>
+
+</body>
+</html>
